@@ -1,4 +1,4 @@
-package learn01;
+package learn03;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,28 +10,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SvtAnalysis
+ * Servlet implementation class addAry
  */
-@WebServlet("/SvtAnalysis")
-public class SvtAnalysis extends HttpServlet {
+@WebServlet("/addary")
+public class addAry extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SvtAnalysis() {
-        super();
-    }
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	       response.setContentType("text/html; charset=utf-8");
-	         PrintWriter out = response.getWriter();
-	         out.append("<!doctype html><html><head><title>Hello Servlet</title></head><body>")
-	         .append("<h2>Hello World!!</h2><hr>")
-	         .append("현재시간: " + java.time.LocalTime.now())
-	         .append("</body></html>");
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+
+		String[] str = request.getParameterValues("n");
+		int result = 0;
+		
+		for(int i=0; i<str.length; i++) {
+			int value = Integer.parseInt(str[i]);
+			result += value;
+		}
+		out.println("값: " + result);
+		
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

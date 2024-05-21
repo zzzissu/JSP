@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력폼 데이터 전송</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1{
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            background-color: rgb(248, 221, 181);
+            margin: 30px 15px 30px 15px;
+            border-radius: 10px;
+        }
+
+        #body_hr{
+            margin: 0 5px 10px 5px;
+        }
+
+        fieldset{
+            background-color: rgb(245, 164, 97);
+            width: 300px;
+            height: 130px;
+            border: none;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form_hr{
+            margin: 10px 0 10px 0;
+            border: 1px solid #79d7b6;
+        }
+
+        #name, #email{
+            width: 270px;
+        }
+        .submit{
+            margin-top: 3px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>회원가입</h1>
+
+<hr id="body_hr">
+
+<form action="#" accept-charset="UTF-8" name="form" method="get" id="regform">
+    <fieldset id="form_box">
+        <span class="span_name">이름</span><br>
+        <input type="text" name="name" id="name" placeholder="이름"><br>
+        <hr class="form_hr">
+        <span class="span_email">이메일</span><br>
+        <input type="email" name="email" id="email" placeholder="123@email.com"><br>
+        <input type="submit" class="submit" value="가입">
+    </fieldset>
+</form>
+
+<!--<form action="#" accept-charset="UTF-8" name="form" method="get" id="regform2">-->
+<!--    <fieldset id="form_box2">-->
+<!--        <span class="span_name">이름</span><br>-->
+<!--        <p></p><br>-->
+<!--        <hr class="form_hr">-->
+<!--        <span class="span_email">이메일</span><br>-->
+<!--        <p></p><br>-->
+<!--        <button class="submit">가입</button>-->
+<!--    </fieldset>-->
+<!--</form>-->
+
+<script>
+    function remove(id){
+        let myobj = document.getElementById(id);
+        myobj.remove();
+    }
+
+    function signUp(){
+        alert("가입하시겠습니까?");
+
+        const name = document.querySelector("#name");
+        const email = document.querySelector("#email");
+
+        remove("form_box");
+
+        let html = `
+        <fieldset id="form_box">
+            <span class="span_name">이름</span><br>
+            <p>${name}</p><br>
+            <hr class="form_hr">
+            <span class="span_email">이메일</span><br>
+            <p>${email}</p><br>
+        </fieldset>`
+    }
+
+    const submit = document.querySelector("#submit");
+    submit.addEventListener("click", signUp());
+</script>
+</body>
+</html>
