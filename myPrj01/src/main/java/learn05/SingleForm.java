@@ -68,6 +68,8 @@ public class SingleForm extends HttpServlet {
 			session.setAttribute("oper", oper);	
 		}
 		
+		
+		
 //		if(!oper.equals("=")) {
 //			application.setAttribute("num", num);
 //			application.setAttribute("oper", oper);
@@ -83,6 +85,7 @@ public class SingleForm extends HttpServlet {
 //				break;
 //			}
 //		}
+		
 		
 	}
 
