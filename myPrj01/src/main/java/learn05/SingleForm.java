@@ -66,6 +66,8 @@ public class SingleForm extends HttpServlet {
 			
 			session.setAttribute("result", result);
 			session.setAttribute("oper", oper);	
+			
+//			response.sendRedirect("/singleForm.html");
 		}
 		
 		
